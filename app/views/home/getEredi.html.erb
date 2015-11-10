@@ -1,0 +1,27 @@
+<div class="row">
+  <h3> Get sons from parent </h3>
+</div>
+<div class="row">
+  <select ng-model="parent" ng-change = getSons() ng-options="o.nome for o in lettura">
+  </select>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+      <h3>Nome</h3>
+    </div>
+    <div class="col-sm-3">
+      <h3>Cognome</h3>
+    </div>
+</div>
+<div class="row">
+    <div ng-repeat="s in sons">
+      <div class="row">
+        <div class="col-sm-3">
+          {{s.nome}}
+        </div>
+        <div class="col-sm-3">
+          {{s.cognome}}
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class = "container" ng-app="index" ng-controller="indexController">
+  <div class="row">
+    <div class="col-sm-6">
+      <button ng-click=cliccato()> bottone </button>
+    </div>
+    <div class="col-sm-6">
+      <h1>Lato destro</h1>
+      <p>{{latoDestro}}</p>
+    </div>
+  </div>
+  <elencator></elencator>
+  <div class="row">
+    <h1>RICERCA LATO CLIENT:</h1>
+  </div>
+  <div class="row">
+    <client-side-search></client-side-search>
+  </div>
+  <div class="row">
+    <h1>RICERCA LATO SERVER:</h1>
+  </div>
+  <div class="row">
+    <server-side-search></server-side-search>
+  </div>
+  <div class="row">
+    <get-eredi></get-eredi>
+  </div>
+</div>
+

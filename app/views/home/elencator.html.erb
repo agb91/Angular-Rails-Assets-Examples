@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-6">
+    <button ng-click=lettoreTest()> readJson </button>
+  </div>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+      <h3>Nome</h3>
+    </div>
+    <div class="col-sm-3">
+      <h3>Cognome</h3>
+    </div>
+    <div class="col-sm-3">
+      <h3>Figlio1</h3>
+    </div>
+    <div class="col-sm-3">
+      <h3>Figlio2</h3>
+    </div>
+</div>
+<div class="row">
+    <div ng-repeat="v in lettura">
+      <div class="col-sm-3">
+        {{v.nome}}
+      </div>
+      <div class="col-sm-3">
+        {{v.cognome}}
+      </div>
+      <div class="col-sm-3">
+        {{v.figlio1}}
+      </div>
+      <div class="col-sm-3">
+        {{v.figlio2}}
+      </div>
+    </div>
+</div>
