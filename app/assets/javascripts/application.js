@@ -17,4 +17,5 @@
 //= require angular
 //= require leaflet
 //= require home
+//= require second
 //= require_tree .

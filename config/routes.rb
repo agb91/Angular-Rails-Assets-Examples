@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'second/index'
+
   get 'altro/index'
   post 'altro/index'
 

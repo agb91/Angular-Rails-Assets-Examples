@@ -8,6 +8,7 @@ app.controller('indexController', ['$scope', '$http' ,function($scope, $http) {
     $scope.serverRead = "";
     $scope.parent = "noone";
     $scope.risultato = [];
+    $scope.sons = [];
 
     $scope.cliccato = function () {
         alert('clic');
@@ -25,16 +26,10 @@ app.controller('indexController', ['$scope', '$http' ,function($scope, $http) {
         }
     }
 
-    $scope.sendDataToRails = function()
+    $scope.askDataToRails = function()
     {
-        $http.post("/altro/index", {nome: $scope.query2})
-        .success(function(data, status, headers, config) {
-            alert("post effettuato");
-            jsonReader("/altro/index.json","serverRead");
-        })
-        .error(function() {
-            alert("Si è verificato un errore!");
-        });
+        url = "/altro/index.json?nome="+$scope.query2;
+        jsonReader(url,"serverRead");
     }
 
     var jsonReader = function(url, oggetto)
@@ -48,8 +43,7 @@ app.controller('indexController', ['$scope', '$http' ,function($scope, $http) {
           }
           if (oggetto == 'serverRead')
           {
-            console.log(data)
-            alert(data);
+            //console.log(data)
             $scope.serverRead = data;
           }
         })
@@ -63,13 +57,13 @@ app.controller('indexController', ['$scope', '$http' ,function($scope, $http) {
         jsonReader('/home/index.json', 'lettoreTest');
     }
 
-    $scope.getSons = function ()
+    $scope.getSons = function (who)
     {
-        $scope.sons = [];
-        var f1 = $scope.parent.figlio1;
-        var f2 = $scope.parent.figlio2;
+        var f1 = who.figlio1;
+        var f2 = who.figlio2;
         $scope.sons.push(searchByIde(f1));
         $scope.sons.push(searchByIde(f2));
+        alert($scope.sons.length);
     }
 
     var searchByIde = function (ago)
@@ -83,6 +77,12 @@ app.controller('indexController', ['$scope', '$http' ,function($scope, $http) {
         }
         return ris;
     }
+
+    $scope.itera = function(chi)
+    {
+        $scope.getSons(chi);
+    }
+
 
 }])
 
