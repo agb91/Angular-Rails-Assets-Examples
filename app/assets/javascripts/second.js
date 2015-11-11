@@ -1,3 +1,5 @@
+alert('vedo il file second.js');
+
 var app = angular.module('second', [])
 app.controller('index', ['$scope', '$http' ,function($scope, $http) {
 

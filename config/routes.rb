@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   get 'home/serverSideSearch'
   get 'home/getEredi'
 
-  root 'home#index'
+  root 'second#index'
 end
