@@ -32,8 +32,16 @@
             }
         }
     }
-    .dispari{
-        margin-left: 85px;
+    .dispari
+    {
+        margin-left: -75px;
+    }
+    .index
+    {
+        opacity: 0.0;
+        &:hover {
+            opacity: 0.0;
+        }
     }
 }
 

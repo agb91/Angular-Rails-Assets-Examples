@@ -5,14 +5,15 @@ app.controller('index', ['$scope', '$http' ,function($scope, $http) {
 
 }]);
 
-app.directive('honeyComb', function() {
-
+app.directive('block', function() {
     return {
         restrict: 'EAC',
-        templateUrl: "/second/honeycomb.html",
+        templateUrl: "/second/block.html",
         replace: false,
-        scope: {name: '@'},
+        scope: {name: '@', cols: '@'},
         link: function(scope, element, attrs) {
+
+            var cols = scope.cols;
 
             var formatVector = function(v) {
                 v = v.substring(1,(v.length-1));
@@ -21,12 +22,11 @@ app.directive('honeyComb', function() {
                 return v;
             };
 
-            var getTwelve = function()
+            var getter = function()
             {
-                scope.name.pop();
                 var ris = [];
-                var max = 12;
-                if(scope.name.length<12)
+                var max = cols;
+                if(scope.name.length<max)
                 {
                   max = scope.name.length;
                 }
@@ -42,10 +42,26 @@ app.directive('honeyComb', function() {
             scope.comb = [];
             do
             {
-                scope.comb[p] = getTwelve();
+                scope.comb[p] = getter();
                 p++;
             }while(scope.name.length>0)
 
+        }
+    };
+});
+
+
+app.directive('honeyComb', function() {
+
+    return {
+        restrict: 'EAC',
+        templateUrl: "/second/honeycomb.html",
+        replace: false,
+        scope: {name: '@'},
+        link: function(scope, element, attrs) {
+          scope.oggetti1 = [1,2,3,4,5,6,7];
+          scope.oggetti2 = [8,9,10,11,12,13,14];
+          scope.cols = 3;
         }
     };
 });
