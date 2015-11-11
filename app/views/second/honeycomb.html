@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="corpse">
+    <div ng-repeat="o in oggetti1">
+      <div class="hex" style="background-image: url(/assets/{{o}}.jpg);" >
+        <div class="link-container">
+          <a href="/{{o}}" class="link">LINK {{o}}</a>
+        </div>
+        <div class="corner-1" > </div>
+        <div class="corner-2"></div>
+      </div>
+    </div>
+    <div class="hex dispari" style="background-image: url(/assets/8.jpg);" >
+      <div class="link-container">
+        <a href="/8" class="link">LINK 8</a>
+      </div>
+      <div class="corner-1" > </div>
+      <div class="corner-2"></div>
+    </div>
+    <div ng-repeat="o in oggetti2">
+      <div class="hex" style="background-image: url(/assets/{{o}}.jpg);" >
+        <div class="link-container">
+          <a href="/{{o}}" class="link">LINK {{o}}</a>
+        </div>
+        <div class="corner-1" > </div>
+        <div class="corner-2"></div>
+      </div>
+    </div>
+  </div>
+</div>

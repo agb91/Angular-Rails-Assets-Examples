@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'second/index'
+  get 'second/honeycomb'
 
   get 'altro/index'
   post 'altro/index'
