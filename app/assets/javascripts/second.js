@@ -57,11 +57,42 @@ app.directive('honeyComb', function() {
         restrict: 'EAC',
         templateUrl: "/second/honeycomb.html",
         replace: false,
-        scope: {name: '@'},
+        scope: {name: '@', cols: '@'},
         link: function(scope, element, attrs) {
-          scope.oggetti1 = [1,2,3,4,5,6,7];
-          scope.oggetti2 = [8,9,10,11,12,13,14];
-          scope.cols = 3;
+
+          var formatVector = function(v) {
+              v = v.substring(1,(v.length-1));
+              v = v.split(',');
+              v = v.reverse();
+              return v;
+          };
+
+          var getter = function() {
+              var ris = [];
+              var max = scope.cols*2;
+              for(var i=0;i<max;i++)
+              {
+                ris.push(parseInt(scope.oggetti.pop()));
+              }
+              return ris;
+          };
+
+          scope.check = function(c) {
+            ris = false;
+            if (totDim>c)
+            {
+              ris = true;
+            }
+            return ris;
+          };
+
+          scope.cols;
+          scope.oggetti = formatVector(scope.name);
+          var totDim = scope.oggetti.length;
+          scope.oggetti1 = getter();
+          scope.oggetti2 = getter();
+
         }
     };
 });
+
