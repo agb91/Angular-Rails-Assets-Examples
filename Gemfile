@@ -7,6 +7,8 @@ gem 'responders'
 
 gem 'rails_12factor', group: :production
 
+gem "non-stupid-digest-assets"
+
 
 gem 'rails'
 gem 'pg'
