@@ -5,6 +5,8 @@ gem 'bundler', '>= 1.8.4'
 gem 'autoprefixer-rails'
 gem 'responders'
 
+gem 'rails_12factor', group: :production
+
 
 gem 'rails'
 gem 'pg'
