@@ -15,17 +15,18 @@ app.directive('honeyComb', function() {
         link: function(scope, element, attrs) {
 
             var formatVector = function(v) {
-                v = v.substring(1,(l-1));
+                v = v.substring(1,(v.length-1));
                 v = v.split(',');
                 v = v.reverse();
                 return v;
             };
 
-            var getSeven = function()
+            var getTwelve = function()
             {
+                scope.name.pop();
                 var ris = [];
-                var max = 7;
-                if(scope.name.length<7)
+                var max = 12;
+                if(scope.name.length<12)
                 {
                   max = scope.name.length;
                 }
@@ -36,16 +37,15 @@ app.directive('honeyComb', function() {
                 return ris;
             }
 
-            var l = scope.name.length;
             scope.name = formatVector(scope.name)
             var p = 0;
             scope.comb = [];
             do
             {
-                scope.comb[p] = getSeven();
+                scope.comb[p] = getTwelve();
                 p++;
-                l = l-7;
-            }while(l>6)
+            }while(scope.name.length>0)
+
         }
     };
 });
