@@ -1,13 +1,20 @@
 /* line 1, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+#droppable1 {
+  padding: 0.5em;
+  margin: 10px;
+  border-style: solid;
+}
+
+/* line 3, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .container {
   width: 700px;
   height: 100%;
   position: absolute;
   top: 50px;
 }
-/* line 6, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 8, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .container .hex {
-  opacity: 0.6;
+  opacity: 0.5;
   width: 150px;
   height: 86px;
   background-color: #ccc;
@@ -23,33 +30,33 @@
   text-align: center;
   zoom: 1;
 }
-/* line 22, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 24, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .container .hex:hover {
   opacity: 1;
 }
-/* line 25, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 27, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .container .hex .link-container {
   margin-top: 15px;
 }
-/* line 28, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 30, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .container .hex .link-container .link {
   color: red;
   font-size: 250%;
 }
-/* line 35, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 37, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .container .dispari {
   margin-left: -75px;
 }
-/* line 39, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 41, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .container .index {
   opacity: 0.0;
 }
-/* line 42, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 44, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .container .index:hover {
   opacity: 0.0;
 }
 
-/* line 48, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 50, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .hex .corner-1,
 .hex .corner-2 {
   position: absolute;
@@ -66,7 +73,7 @@
   backface-visibility: hidden;
 }
 
-/* line 65, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 67, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .hex .corner-1 {
   z-index: -1;
   -webkit-transform: rotate(60deg);
@@ -74,14 +81,14 @@
   transform: rotate(60deg);
 }
 
-/* line 74, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 76, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .hex .corner-2 {
   -webkit-transform: rotate(-60deg);
   -ms-transform: rotate(-60deg);
   transform: rotate(-60deg);
 }
 
-/* line 82, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 84, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .hex .corner-1:before,
 .hex .corner-2:before {
   width: 173px;
@@ -100,7 +107,7 @@
   backface-visibility: hidden;
 }
 
-/* line 102, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 104, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .hex .corner-1:before {
   -webkit-transform: rotate(-60deg) translate(-87px, 0px);
   -ms-transform: rotate(-60deg) translate(-87px, 0px);
@@ -110,7 +117,7 @@
   transform-origin: 0 0;
 }
 
-/* line 115, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
+/* line 117, /home/andrea/Scrivania/rails-angular-test/railsAngularTest/app/assets/stylesheets/second.scss */
 .hex .corner-2:before {
   -webkit-transform: rotate(60deg) translate(-48px, -11px);
   -ms-transform: rotate(60deg) translate(-48px, -11px);
