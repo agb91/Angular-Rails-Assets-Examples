@@ -1,9 +1,28 @@
 var app = angular.module('second',[])
 
-app.controller("index", function($scope, splitter) {
+app.controller("index", function($scope, $compile, splitter) {
 
+    var w = window.innerWidth;
+    var colmax = 7
+    if (w<1200)
+    {
+      colmax = 5;
+      if (w<1000)
+      {
+        colmax = 3;
+        if(w<777)
+        {
+          colmax = 2;
+        }
+      }
+    }
+    $scope.cols = 7;
+    if($scope.cols>colmax)
+    {
+      $scope.cols=colmax;
+    }
     $scope.oggetti = [1,2,3,4,5,6,7,8,9,10,11,12];
-    $scope.oggetti = splitter.splitter($scope.oggetti,5);
+    $scope.oggetti = splitter.splitter($scope.oggetti,($scope.cols*2));
 
 });
 
@@ -64,6 +83,18 @@ app.directive("honeyComb", function(splitter) {
         scope: {name: '@'},
         link: function(scope, element, attrs) {
 
+          scope.check = function(n)
+          {
+            console.log(n);
+            var ris = false
+            if(scope.comb[n].length>0)
+            {
+              ris=true;
+            }
+            console.log(ris)
+            return ris;
+          }
+
           var formatVector = function(v) {
               v = v.substring(1,(v.length-1));
               v = v.split(',');
@@ -71,8 +102,13 @@ app.directive("honeyComb", function(splitter) {
               return v;
           };
 
+          scope.comb = []
           scope.oggetti = formatVector(scope.name);
-          scope.comb = splitter.half(scope.oggetti);
+          if(scope.oggetti.length>1)
+          {
+            scope.comb = splitter.half(scope.oggetti);
+          }
+
         }
     };
 });
