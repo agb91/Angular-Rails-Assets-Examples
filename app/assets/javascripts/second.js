@@ -1,63 +1,17 @@
 var app = angular.module('second', [])
-app.controller('index', ['$scope', '$http' ,function($scope, $http) {
+app.controller('index', ['$scope' , function($scope) {
 
-    $scope.oggetti = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+    $scope.primovet = [1,2,3,4,5,6];
+    $scope.secondovet = [7,8,9,10,11,12];
+    $scope.oggetti = [$scope.primovet, $scope.secondovet];
 
 }]);
-
-app.directive('block', function() {
-    return {
-        restrict: 'EAC',
-        templateUrl: "/second/block.html",
-        replace: false,
-        scope: {name: '@', cols: '@'},
-        link: function(scope, element, attrs) {
-
-            var cols = scope.cols;
-
-            var formatVector = function(v) {
-                v = v.substring(1,(v.length-1));
-                v = v.split(',');
-                v = v.reverse();
-                return v;
-            };
-
-            var getter = function()
-            {
-                var ris = [];
-                var max = cols;
-                if(scope.name.length<max)
-                {
-                  max = scope.name.length;
-                }
-                for(var i=0;i<max;i++)
-                {
-                  ris.push(scope.name.pop());
-                }
-                return ris;
-            }
-
-            scope.name = formatVector(scope.name)
-            var p = 0;
-            scope.comb = [];
-            do
-            {
-                scope.comb[p] = getter();
-                p++;
-            }while(scope.name.length>0)
-
-        }
-    };
-});
-
-
 app.directive('honeyComb', function() {
-
     return {
         restrict: 'EAC',
         templateUrl: "/second/honeycomb.html",
         replace: false,
-        scope: {name: '@', cols: '@'},
+        scope: {name: '@'},
         link: function(scope, element, attrs) {
 
           var formatVector = function(v) {
@@ -67,31 +21,28 @@ app.directive('honeyComb', function() {
               return v;
           };
 
-          var getter = function() {
-              var ris = [];
-              var max = scope.cols*2;
-              for(var i=0;i<max;i++)
+          var half = function(v) {
+              var ris1 = [];
+              var ris2 = [];
+              var risTot = []
+              var l = v.length;
+              for (var i = 0; i<l; i++)
               {
-                ris.push(parseInt(scope.oggetti.pop()));
+                if(i<(l/2))
+                {
+                  ris1.push(v.pop());
+                }
+                else
+                {
+                  ris2.push(v.pop());
+                }
               }
-              return ris;
+              risTot = [ris1,ris2];
+              return risTot;
           };
 
-          scope.check = function(c) {
-            ris = false;
-            if (totDim>c)
-            {
-              ris = true;
-            }
-            return ris;
-          };
-
-          scope.cols;
           scope.oggetti = formatVector(scope.name);
-          var totDim = scope.oggetti.length;
-          scope.oggetti1 = getter();
-          scope.oggetti2 = getter();
-
+          scope.comb = half(scope.oggetti);
         }
     };
 });

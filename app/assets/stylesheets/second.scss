@@ -1,10 +1,12 @@
+#droppable1 { padding: 0.5em; margin: 10px; border-style: solid; }
+
 .container {
     width:700px;
     height:100%;
     position:absolute;
     top:50px;
     .hex {
-        opacity: 0.6;
+        opacity: 0.5;
         width:150px;
         height:86px;
         background-color: #ccc;

@@ -1,3 +1,4 @@
+=begin
 class AltroController < ApplicationController
   skip_before_action :verify_authenticity_token
 
@@ -7,3 +8,4 @@ class AltroController < ApplicationController
   end
 
 end
+=end
