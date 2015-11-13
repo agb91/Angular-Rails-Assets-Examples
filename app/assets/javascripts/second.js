@@ -2,6 +2,10 @@ var app = angular.module('second',[])
 
 app.controller("index", function($scope, $compile, splitter) {
 
+    $( window ).resize(function() {
+      console.log(window.innerWidth);
+      location.reload();
+    });
     var w = window.innerWidth;
     var colmax = 7
     if (w<1200)
@@ -21,7 +25,7 @@ app.controller("index", function($scope, $compile, splitter) {
     {
       $scope.cols=colmax;
     }
-    $scope.oggetti = [1,2,3,4,5,6,7,8,9,10,11,12];
+    $scope.oggetti = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
     $scope.oggetti = splitter.splitter($scope.oggetti,($scope.cols*2));
 
 });
