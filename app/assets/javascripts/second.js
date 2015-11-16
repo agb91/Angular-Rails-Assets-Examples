@@ -7,7 +7,7 @@ app.controller("index", function($scope, $compile, splitter) {
       location.reload();
     });
     var w = window.innerWidth;
-    var colmax = 7
+    var colmax = 6
     if (w<1200)
     {
       colmax = 5;

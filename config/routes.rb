@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'third/index'
+  get 'third/hch1'
+  get 'third/hch2'
+  get 'third/hcimg'
+
   get 'second/index'
   get 'second/honeycomb'
 
