@@ -12,9 +12,9 @@ app.directive("hcimg", function() {
         scope: {im: '@', l: '@',},
         link: function(scope, element, attrs) {
 
-          scope.check = function(n)
+          if(scope.l<200)
           {
-           //todo
+            document.getElementById("ext").className = "imh2";
           }
 
         }

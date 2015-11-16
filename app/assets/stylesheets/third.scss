@@ -1,6 +1,74 @@
-$imwidth: 300px;
+.imh2{
+  $imwidth: 150px;
+  .hexagon {
+    position: relative;
+    width: $imwidth;
+    height: $imwidth * 0.57735;
+    margin: $imwidth * 0.2887 0;
+    background-size: auto ($imwidth * 1.1547005);
+    background-position: center;
+  }
 
-.im{
+  .hexTop,
+  .hexBottom {
+    position: absolute;
+    z-index: 1;
+    width: $imwidth * 0.7071;
+    height: $imwidth * 0.7071;
+    overflow: hidden;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background: inherit;
+    left: $imwidth * 0.14645;
+  }
+
+  .hexTop:after,
+  .hexBottom:after {
+    content: "";
+    position: absolute;
+    width: $imwidth;
+    height: $imwidth * 0.577350269;
+    -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(- ($imwidth * 0.288675));
+    -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(- ($imwidth * 0.288675));
+    transform:          rotate(45deg) scaleY(1.7321) translateY(- ($imwidth * 0.288675));
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    background: inherit;
+  }
+
+  .hexTop {
+    top: -$imwidth * 0.3535535;
+  }
+
+  .hexTop:after {
+    background-position: center top;
+  }
+
+  .hexBottom {
+    bottom: -$imwidth * 0.3535535;
+  }
+
+  .hexBottom:after {
+    background-position: center bottom;
+  }
+
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    top: 0.0000px;
+    left: 0;
+    width: 200.0000px;
+    height: 0.5773505 * $imwidth;
+    z-index: 2;
+    //background: inherit;
+  }
+}
+
+
+.imh1{
+  $imwidth: 300px;
   .hexagon {
     position: relative;
     width: $imwidth;
