@@ -1,9 +1,10 @@
-<div class="container" ng-app = "third" ng-controller = "index">
+<div class="container" ng-click=release() ng-app = "third" ng-controller = "index">
+  <a ng-href="/fourth/index.html">link prossima</a>
   <div class="row">
     <div class="col-sm-6">
       <h1> Questa è una prova di h1 </h1>
     </div>
-    <div class="col-sm-6">
+    <div id="h1" ng-click=click('h1') class="col-sm-6 movable">
       <hch1 txt = "Questa è una prova hch1"></hch1>
     </div>
   </div>
@@ -14,7 +15,7 @@
     <div class="col-sm-6">
       <h2> Questa è una prova di h2 </h2>
     </div>
-    <div class="col-sm-6">
+    <div id="h2" ng-click=click('h2') class="col-sm-6 movable">
       <hch2 txt = "Questa è una prova hch2"></hch2>
     </div>
   </div>

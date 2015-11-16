@@ -16,5 +16,6 @@
 //= require angular
 //= require leaflet
 //= require second
+//= require fourth
 //= require third
 //= require_tree .

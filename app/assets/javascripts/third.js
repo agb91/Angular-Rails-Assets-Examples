@@ -2,6 +2,41 @@ var app = angular.module('third',[])
 
 app.controller("index", function($scope, $compile) {
 
+  $scope.state = 0;
+  var ofleft=0;
+  var oftop=0;
+  $scope.click = function(id)
+  {
+    id = "#"+id;
+    if ($scope.state==0)
+    {
+      $scope.state=1;
+    }
+    else
+    {
+      $scope.state=0;
+      $(document).unbind();
+    }
+    ofleft=event.pageX;
+    oftop=event.pageY;
+    if($scope.state==1)
+    {
+      $(document).bind('mousemove',function(e){
+        var x = e.pageX-ofleft;
+        var y = e.pageY-oftop;
+        if(x<0){
+          $(id).css("margin-left",x);
+        }
+        else
+        {
+          $(id).css("left", (x));
+        }
+        $(id).css("margin-top",y);
+      });
+    }
+
+  }
+
 });
 
 app.directive("hcimg", function() {

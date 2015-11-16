@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'fourth/index'
+  get 'fourth/paragraph'
+
   get 'third/index'
   get 'third/hch1'
   get 'third/hch2'
